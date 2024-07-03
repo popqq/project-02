@@ -5,15 +5,27 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    children: [{ //表示配置子组件/路由
+      path: '/result', //要想访问/result, 先显示父页面HomeView整体
+      component: () => import(/* webpackChunkName: "about" */ '../views/ResultView.vue') //找到父组件中的<router-view/>, 摆放子组件的内容
+    }]
+  }, {
+    path: '/result', //要想访问result, 先显示父页面HomeView整体
+    component: () => import(/* webpackChunkName: "about" */ '../views/ResultView.vue')
+  }, {
+    path: 'list', //要想访问/list, 先显示父页面HomeView整体
+    component: () => import(/* webpackChunkName: "about" */ '../views/ListView.vue')
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/reg',
+    name: 'reg',
+    component: () => import(/* webpackChunkName: "about" */ '../views/RegView.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import(/* webpackChunkName: "about" */ '../views/LoginView.vue')
   }
 ]
 

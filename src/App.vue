@@ -1,9 +1,15 @@
 <template>
-  <nav>
+  <!-- <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  </nav> -->
+
+  <!-- <router-view> -->
+  <!-- 页面中变化的地方, 可以用新的内容替换的地方 -->
+  <!-- 默认显示的是 views/HomeView.vue 页面, 在router/index.js中配置 -->
+  <!-- </router-view> -->
+
+  <router-view />
 </template>
 
 <style>
